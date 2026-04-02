@@ -1,0 +1,385 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora Static Site Demo India – Premium Web Solutions</title>
+    <meta name="description" content="Discover premium, modern web solutions with Kora Static Site Demo India. We build beautiful, animated websites that captivate and engage your audience.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kora Static Site Demo India – Premium Web Solutions">
+    <meta property="og:description" content="Discover premium, modern web solutions with Kora Static Site Demo India. We build beautiful, animated websites that captivate and engage your audience.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/fluency/48/000000/globe.png">
+    <link rel="shortcut icon" href="https://img.icons8.com/fluency/48/000000/globe.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/48/000000/globe.png">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://example.com">
+    
+    <!-- Hero image preload -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kora Static Site Demo India",
+      "description": "Premium, modern web solutions with beautiful, animated websites that captivate and engage.",
+      "address": { "@type": "PostalAddress", "streetAddress": "", "addressCountry": "IN" },
+      "telephone": "",
+      "image": "https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop"
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .hero-gradient-overlay {
+            background: linear-gradient(to top, #0a0a0a 2%, rgba(10, 10, 10, 0.6) 50%, rgba(10, 10, 10, 0) 100%);
+        }
+        .accent-color { color: #8b5cf6; }
+        .bg-accent { background-color: #8b5cf6; }
+        .border-accent { border-color: #8b5cf6; }
+        .ring-accent:focus { ring-color: #8b5cf6; }
+        .btn-primary {
+            background-color: #8b5cf6;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #7c3aed;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #4a5568;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #1e293b;
+            border-color: #64748b;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Kora Site Config -->
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "https://api.kora.ai", // Placeholder, will be replaced by actual API URL
+            businessId: "0743faa1-a579-4acd-bb48-ae1b973c3b8c",
+            recaptchaSiteKey: "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Google's public test key
+        };
+    </script>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">Kora<span class="accent-color">.</span></a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-300 hover:accent-color transition-colors">Home</a>
+                    <a href="#about" class="text-slate-300 hover:accent-color transition-colors">About</a>
+                    <a href="#services" class="text-slate-300 hover:accent-color transition-colors">Services</a>
+                    <a href="#contact" class="text-slate-300 hover:accent-color transition-colors">Contact</a>
+                </nav>
+                <a href="#contact" class="hidden md:inline-block px-5 py-2 text-sm font-medium text-white rounded-md btn-primary">Get Started</a>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
+            <a href="#home" class="block py-3 px-6 text-slate-300 hover:bg-gray-800">Home</a>
+            <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-gray-800">About</a>
+            <a href="#services" class="block py-3 px-6 text-slate-300 hover:bg-gray-800">Services</a>
+            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop" 
+                     alt="Abstract modern background with flowing lines" 
+                     class="w-full h-full object-cover"
+                     loading="eager" fetchpriority="high" decoding="async" width="2070" height="1380">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
+                <div class="absolute inset-0 hero-gradient-overlay"></div>
+            </div>
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4" data-aos="fade-down">
+                    Crafting Digital <span class="accent-color">Excellence</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+                    We design and develop premium, high-performance websites with buttery smooth animations that leave a lasting impression.
+                </p>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="px-8 py-3 text-lg font-semibold text-white rounded-lg btn-primary mr-4">Start Your Project</a>
+                    <a href="#about" class="px-8 py-3 text-lg font-semibold text-white rounded-lg btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+                             alt="A team of creative professionals collaborating in a modern office" 
+                             class="rounded-lg shadow-2xl" loading="lazy" width="2070" height="1380">
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="200">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Where <span class="accent-color">Vision</span> Meets Innovation</h2>
+                        <p class="text-slate-400 mb-6">
+                            We are a team of passionate designers and developers dedicated to building exceptional digital experiences. Our philosophy is simple: combine stunning aesthetics with flawless functionality to help your brand shine in the digital world.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 rounded-full bg-violet-900/50 flex items-center justify-center mr-4">
+                                    <i data-lucide="figma" class="w-5 h-5 accent-color"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Pixel-Perfect Design</h3>
+                                    <p class="text-slate-400">Every detail is meticulously crafted for a visually stunning result.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 rounded-full bg-violet-900/50 flex items-center justify-center mr-4">
+                                    <i data-lucide="zap" class="w-5 h-5 accent-color"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Blazing Fast Performance</h3>
+                                    <p class="text-slate-400">Optimized for speed to ensure the best user experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">Our Core Services</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+                    We offer a complete suite of services to bring your digital vision to life.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 text-left transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="inline-block p-3 rounded-md bg-violet-900/50 mb-4">
+                            <i data-lucide="layout-template" class="w-7 h-7 accent-color"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Web Design</h3>
+                        <p class="text-slate-400">Creating intuitive and beautiful user interfaces that are a joy to use.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 text-left transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="inline-block p-3 rounded-md bg-violet-900/50 mb-4">
+                            <i data-lucide="code-2" class="w-7 h-7 accent-color"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Web Development</h3>
+                        <p class="text-slate-400">Building robust, scalable, and secure websites with modern technologies.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 text-left transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <div class="inline-block p-3 rounded-md bg-violet-900/50 mb-4">
+                            <i data-lucide="smartphone" class="w-7 h-7 accent-color"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Responsive Design</h3>
+                        <p class="text-slate-400">Ensuring your website looks and works perfectly on all devices, big or small.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">Let's Build Something <span class="accent-color">Amazing</span></h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+                        Have a project in mind? We'd love to hear about it. Fill out the form below to get in touch.
+                    </p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-gray-900/50 p-8 rounded-lg border border-gray-800" data-aos="fade-up" data-aos-delay="200">
+                    <form id="contact-form" novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-4 text-white focus:outline-none ring-accent focus:ring-2">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-4 text-white focus:outline-none ring-accent focus:ring-2">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-4 text-white focus:outline-none ring-accent focus:ring-2"></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full md:w-auto px-8 py-3 text-lg font-semibold text-white rounded-lg btn-primary">Send Message</button>
+                        </div>
+                        <p id="form-status" class="mt-4 text-center text-sm"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 Kora Static Site Demo India. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-gray-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+            const captchaToken = grecaptcha.getResponse();
+
+            // Basic Validation
+            if (!name) {
+                formStatus.textContent = 'Please enter your full name.';
+                formStatus.style.color = '#f87171'; // red-400
+                return;
+            }
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                formStatus.textContent = 'Please enter a valid email address.';
+                formStatus.style.color = '#f87171';
+                return;
+            }
+            if (!message) {
+                formStatus.textContent = 'Please enter your message.';
+                formStatus.style.color = '#f87171';
+                return;
+            }
+            if (!captchaToken) {
+                formStatus.textContent = 'Please complete the reCAPTCHA.';
+                formStatus.style.color = '#f87171';
+                return;
+            }
+
+            const cfg = window.KORA_SITE_CONFIG || {};
+            const apiBaseUrl = (cfg.apiBaseUrl || 'https://api.kora.ai').replace(/\/+$/, '');
+            const businessId = cfg.businessId;
+
+            if (!businessId) {
+                formStatus.textContent = 'Form submission is not configured correctly.';
+                formStatus.style.color = '#f87171';
+                return;
+            }
+
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = '#60a5fa'; // blue-400
+
+            fetch(`${apiBaseUrl}/api/v1/public/forms/submit`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    business_id: businessId,
+                    form_type: 'contact',
+                    form_data: { name, email, message },
+                    submitter_email: email,
+                    captcha_token: captchaToken
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw new Error(err.message || 'Network response was not ok') });
+                }
+                return response.json();
+            })
+            .then(data => {
+                formStatus.textContent = 'Thank you! Your message has been sent.';
+                formStatus.style.color = '#4ade80'; // green-400
+                contactForm.reset();
+                grecaptcha.reset();
+            })
+            .catch(error => {
+                formStatus.textContent = 'Sorry, something went wrong. Please try again later.';
+                formStatus.style.color = '#f87171';
+                console.error('Form submission error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+```
